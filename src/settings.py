@@ -1,13 +1,22 @@
+"""Project settings, path - to the file storing the data"""
+
+
 class Config:
-    n: int = 1
+    """project config"""
+
+    __path: str
+
 
     @property
-    def repeats(self):
-        return self.n
-    
-    @repeats.setter
-    def repeats(self, n: int):
-        self.n = n
+    def path(self) -> str:
+        """path getter"""
+        return self.__path
+
+
+    @path.setter
+    def path(self, v) -> None:
+        """path setter"""
+        self.__path = v
 
 
 SETTINGS = Config()
