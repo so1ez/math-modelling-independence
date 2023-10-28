@@ -63,12 +63,12 @@ class RouletteSumilation(Simulation):
     def conduct_experiments(self) -> None:
         found, total_attempts = 0, 0
         while found < 10000:
-            total_attempts += 1
             i, prev_spin = 0, None
             while i < 10:
 
                 rand = randrange(1, 38)
                 i += 1
+                total_attempts += 1
 
                 for key, value in self.colors.items():
                     if rand in value:
@@ -83,6 +83,8 @@ class RouletteSumilation(Simulation):
 
             else:
                 rand = randrange(1, 38)
+                total_attempts += 1
+
                 for key, value in self.colors.items():
                     if rand in value:
                         following = key
