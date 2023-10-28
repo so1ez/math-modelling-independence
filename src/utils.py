@@ -61,8 +61,9 @@ class RouletteSumilation(Simulation):
 
     @timer
     def conduct_experiments(self) -> None:
-        found = 0
+        found, total_attempts = 0, 0
         while found < 10000:
+            total_attempts += 1
             i, prev_spin = 0, None
             while i < 10:
 
@@ -90,6 +91,8 @@ class RouletteSumilation(Simulation):
 
                 self.save_result(cur_spin, following)
                 found += 1
+
+        print(f"total attempts: {total_attempts}")
 
 
     def save_result(self, ten: str, following: str):
