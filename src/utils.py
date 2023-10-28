@@ -172,6 +172,7 @@ class BombardmentSimulation(Simulation):
             found += 1
 
         print(f"first hit is: {self.first_point}")
+        print(f"first point hits: {self.results_map[self.first_point]}")
 
         return self.results_map
 
