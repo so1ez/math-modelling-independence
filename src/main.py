@@ -3,6 +3,8 @@ Main file for execution
 Boytsov V.M.
 """
 
+import os
+
 from settings import SETTINGS
 from utils import (
     RouletteSumilation,
@@ -14,6 +16,7 @@ from utils import (
 
 def roulette() -> None:
     """Conduct, process and show roulette experiment"""
+
     # make and save data
     rs = RouletteSumilation(SETTINGS.path)
     rs.conduct_experiments()
@@ -26,6 +29,7 @@ def roulette() -> None:
 
 def bombardment() -> None:
     """Conduct, process and show bombardment experiment"""
+
     # make and save data
     bs = BombardmentSimulation()
     results = bs.conduct_experiments()
@@ -43,6 +47,11 @@ _experiment_map = {
 
 def main() -> None:
     """Main entry-point function"""
+
+    try:
+        os.mkdir("src/data")
+    except FileExistsError:
+        pass
 
     SETTINGS.path = "src/data/roulette_results.txt"
 

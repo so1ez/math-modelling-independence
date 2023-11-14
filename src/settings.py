@@ -2,17 +2,19 @@
 
 
 class Config:
-    """project config"""
+    """Project config"""
 
     @property
     def path(self) -> str:
-        """path getter"""
+        """Path getter"""
+
         return self.__path
 
 
     @path.setter
     def path(self, v) -> None:
-        """path setter"""
+        """Path setter"""
+
         self.__path = v
 
 
