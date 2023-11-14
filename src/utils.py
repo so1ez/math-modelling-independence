@@ -148,7 +148,7 @@ class RouletteVisualization(ResultVisualization):
 class BombardmentSimulation(Simulation):
     """Bombardment math modelling class"""
 
-    first_point: tuple = None
+    first_point = None
 
 
     def __init__(self) -> None:
