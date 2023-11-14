@@ -4,9 +4,6 @@
 class Config:
     """project config"""
 
-    __path: str
-
-
     @property
     def path(self) -> str:
         """path getter"""
