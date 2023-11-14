@@ -22,7 +22,7 @@ def timer(func):
 
 
 class Simulation(ABC):
-    """class for experiments simulations"""
+    """Class for experiments simulations"""
 
     results_map: dict
 
@@ -54,6 +54,7 @@ class RouletteSumilation(Simulation):
         self.colors = {"black": {i for i in range(1, 19)},
                        "red": {i for i in range(19, 37)},
                        "green": {37}}
+
         # clear file
         with open(self.path, 'w', encoding="utf-8") as file:
             file.close()
@@ -200,7 +201,3 @@ class BombardmentVisualization(ResultVisualization):
         plt.title('Bombardment frequencies')
         plt.colorbar()
         plt.show()
-
-
-if __name__ == "__main__":
-    pass
