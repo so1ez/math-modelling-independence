@@ -1,4 +1,4 @@
-"""unit tests main file"""
+"""Unit tests main file"""
 
 from src.settings import SETTINGS
 from src.utils import (
@@ -10,14 +10,14 @@ from src.utils import (
 
 
 class TestClass:
-    """class with test methods"""
+    """Class with test methods"""
 
     bomb_results = None
     path = "src/data/roulette_results.txt"
 
 
     def test_roulette_sim(self):
-        """test attributes and methods of roulette simulation class"""
+        """Test attributes and methods of roulette simulation class"""
 
         SETTINGS.path = TestClass.path
         rs = RouletteSumilation(SETTINGS.path)
@@ -40,7 +40,7 @@ class TestClass:
 
 
     def test_roulette_visual(self):
-        """test attributes and methods of roulette visualization class"""
+        """Test attributes and methods of roulette visualization class"""
 
         SETTINGS.path = TestClass.path
         rv = RouletteVisualization(SETTINGS.path)
@@ -57,7 +57,7 @@ class TestClass:
 
 
     def test_bombardment_sim(self):
-        """test attributes and methods of bombardment simulation class"""
+        """Test attributes and methods of bombardment simulation class"""
 
         bs = BombardmentSimulation()
         assert bs.first_point is None, "Первая точка не None"
@@ -75,7 +75,7 @@ class TestClass:
 
 
     def test_bombardment_visual(self):
-        """test attributes and methods of bombardment visualization class"""
+        """Test attributes and methods of bombardment visualization class"""
 
         bv = BombardmentVisualization(TestClass.bomb_results)
         assert TestClass.bomb_results == bv.results, \
