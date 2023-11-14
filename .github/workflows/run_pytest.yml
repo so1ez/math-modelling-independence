@@ -1,0 +1,21 @@
+name: Autotesting with pytest
+
+on:
+  push
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Setup python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: python3 -m pip install -r requirements.txt
+      - name: Create a directory for results file
+        run: mkdir src/data
+      - name: Run tests
+        run: python3 -m pytest
